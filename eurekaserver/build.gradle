@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':admin-common')
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    runtimeOnly 'com.h2database:h2'
+}

@@ -84,3 +84,15 @@ project(':api-item-service') {
         compile project(':admin-common')
     }
 }
+
+project(':eurekaserver') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}
+
+project(':api-gateway') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}

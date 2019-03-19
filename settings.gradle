@@ -1,2 +1,2 @@
 rootProject.name = 'cloudpack'
-include 'admin-common', 'admin-api', 'admin-web', 'user-service', 'api-user-service', 'api-item-service'
+include 'admin-common', 'admin-api', 'admin-web', 'user-service', 'api-user-service', 'api-item-service', 'eurekaserver', 'api-gateway'

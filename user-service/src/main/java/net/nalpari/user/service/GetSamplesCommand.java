@@ -19,12 +19,11 @@ import java.util.List;
 public class GetSamplesCommand {
 
     @HystrixCommand(fallbackMethod = "defaultFallback")
-    public List<Sample> getSamples() {
+    public ArrayList getSamples() {
 //        List<Sample> result = new ArrayList<>();
 //        result.add(new Sample("test"));
 //        result.add(new Sample("test111"));
-        List<Sample> result = new RestTemplate().getForObject("http://localhost:7788/test/", ArrayList.class);
-        return result;
+        return new RestTemplate().getForObject("http://localhost:7788/test/", ArrayList.class);
     }
 
     public List<Sample> defaultFallback() {

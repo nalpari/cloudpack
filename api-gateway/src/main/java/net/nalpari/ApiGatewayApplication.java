@@ -2,23 +2,19 @@ package net.nalpari;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 /**
  * @Desc :
- * @FileName : ApiUserApplication.java
+ * @FileName : ApiGatewayApplication.java
  * @Project : cloudpack
  * @Date : 2019-03-19
  * @Author : yoosw@3top.co.kr
  */
 @SpringBootApplication
-@EnableCircuitBreaker
-@EnableHystrixDashboard
 @EnableDiscoveryClient
-public class ApiUserApplication {
+public class ApiGatewayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ApiUserApplication.class, args);
+        SpringApplication.run(ApiGatewayApplication.class, args);
     }
 }
