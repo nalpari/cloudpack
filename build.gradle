@@ -1,0 +1,86 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+
+    }
+}
+
+subprojects {
+
+    ext['springCloudVersion'] = 'Finchley.SR2'
+
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.bkjeon.admin'
+    version = '0.0.0'
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    task initSourceFolders {
+        sourceSets*.java.srcDirs*.each {
+            if( !it.exists() ) {
+                it.mkdirs()
+            }
+        }
+
+        sourceSets*.resources.srcDirs*.each {
+            if( !it.exists() ) {
+                it.mkdirs()
+            }
+        }
+    }
+
+    dependencies {
+        compileOnly('org.projectlombok:lombok')
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+}
+
+project(':admin-api') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}
+
+project(':admin-web') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}
+
+project(':user-service') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}
+
+project(':api-user-service') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}
+
+project(':api-item-service') {
+    dependencies {
+        compile project(':admin-common')
+    }
+}

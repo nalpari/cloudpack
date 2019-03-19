@@ -1,0 +1,12 @@
+dependencies {
+    compile project(':admin-common')
+
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-hystrix', version: '1.4.4.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix-dashboard
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-hystrix-dashboard', version: '1.4.4.RELEASE'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
