@@ -2,7 +2,6 @@ package net.nalpari.controller;
 
 import net.nalpari.admin.entity.User;
 import net.nalpari.service.UserCommand;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +31,7 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return userCommand.getUser(id);
+//        return feignUserService.getUser(id);
     }
 
     @GetMapping("/spc")
