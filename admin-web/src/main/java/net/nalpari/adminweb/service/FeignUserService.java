@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date : 2019-03-20
  * @Author : yoosw@3top.co.kr
  */
-@FeignClient(name = "apiuser")
+@FeignClient(name = "apiuser", fallback = FeignUserServiceFallback.class)
 public interface FeignUserService {
     @GetMapping("/user/{id}")
     User getUser(@PathVariable("id") Long id);
